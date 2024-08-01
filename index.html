@@ -13,11 +13,50 @@
       <li><a href="./pages/cm-in-convert.html">Cm-to-Inch Converter</a></li>
     </ul>
   </nav>
-  
-  <h1>Inches-to-cm Converter</h1>
-  <p>Google only does one inches-to-centimeter conversion at a time. This site can do 10 at a time.</p>
-  <p>Add up to 10 values and press "Convert to cm" to get your results:</p>
+  <div class="main">
+    <h1>Inches-to-cm Converter</h1>
+    <p>Google only does 1 inches-to-centimeter conversion at a time. This site can do 10 at a time.</p>
+    <p>Add up to 10 values and press "Convert to cm" to get your results:</p>
 
-  
+    <p>Num 1 (in inches): <input type="text" class="in-to-cm"></p>
+    <p>Num 2 (in inches): <input type="text" class="in-to-cm"></p>
+    <p>Num 3 (in inches): <input type="text" class="in-to-cm"></p>
+    <p>Num 4 (in inches): <input type="text" class="in-to-cm"></p>
+    <p>Num 5 (in inches): <input type="text" class="in-to-cm"></p>
+    <p>Num 6 (in inches): <input type="text" class="in-to-cm"></p>
+    <p>Num 7 (in inches): <input type="text" class="in-to-cm"></p>
+    <p>Num 8 (in inches): <input type="text" class="in-to-cm"></p>
+    <p>Num 9 (in inches): <input type="text" class="in-to-cm"></p>
+    <p>Num 10 (in inches): <input type="text" class="in-to-cm"></p>
+    
+    <input type="button" onclick="inchesToCm()" value="Convert to cm"> 
+    <br>
+    <p id="result-cm"></p>
+  </div>
+  <footer>
+    <p>Copyright © 2024 by Victor Oyedeji. All Rights Reserved.</p>
+  </footer>
+
+
+  <script>
+    function inchesToCm() {
+      const elem = document.getElementsByClassName("in-to-cm");
+      let i = 0;
+      let text = "";
+      //loop to generate fields
+      for (i ; i < elem.length ; i++) {
+        //checks if input is 'not a number'
+        if (isNaN(elem[i].value)) {
+          alert(`'Num ${i+1}' must be a number`);
+          return false;
+        }
+        //generate each field (line)
+        text += `Num ${i+1}: ${(elem[i].value * 2.54).toFixed(0)} cm <br>`;
+      }
+
+      //print each line
+      document.getElementById("result-cm").innerHTML = text;
+    }
+  </script>
 </body>
 </html>
