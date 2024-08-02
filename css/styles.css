@@ -1,8 +1,19 @@
-body {margin: 0;}
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-family: Georgia, serif;
+}
 
 .main {
   height: 750px;
   padding: 20px;
+}
+
+input[type="text"] {
+  width: 150px;
 }
 
 footer p {
