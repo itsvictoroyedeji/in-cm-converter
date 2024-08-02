@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centimeters-to-in Converter</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Inch-to-cm Converter</a></li>
+      <li><a href="javascript:void(0)" class="active">Cm-to-Inch Converter</a></li>
+    </ul>
+  </nav>
+
+  <div class="main">
+    <h1>Centimeters-to-inches Converter</h1>
+    <p>Google only does 1 centimeter-to-in conversion at a time. This site can do 10 at a time.</p>
+    <p>Add up to 10 values and press "Convert to inches" to get your results:</p></h1>
+
+    <p>Num 1 (in cm): <input type="text" class="cm-to-in"></p>
+    <p>Num 2 (in cm): <input type="text" class="cm-to-in"></p>
+    <p>Num 3 (in cm): <input type="text" class="cm-to-in"></p>
+    <p>Num 4 (in cm): <input type="text" class="cm-to-in"></p>
+    <p>Num 5 (in cm): <input type="text" class="cm-to-in"></p>
+    <p>Num 6 (in cm): <input type="text" class="cm-to-in"></p>
+    <p>Num 7 (in cm): <input type="text" class="cm-to-in"></p>
+    <p>Num 8 (in cm): <input type="text" class="cm-to-in"></p>
+    <p>Num 9 (in cm): <input type="text" class="cm-to-in"></p>
+    <p>Num 10 (in cm): <input type="text" class="cm-to-in"></p>
+
+    <input type="button" onclick="cmToInches()" value="Convert to inches"> 
+    <br>
+    <p id="result-in"></p>
+  </div>
+  <footer>
+    <p>Copyright © 2024 by Victor Oyedeji. All Rights Reserved.</p>
+  </footer>
+
+
+  <script>
+    function cmToInches() {
+      const elem = document.getElementsByClassName("cm-to-in");
+      let i = 0;
+      let text = "";
+      // loop to generate fields values
+      for (i ; i < elem.length ; i++) {
+        //checks if input is 'not a number'
+        if (isNaN(elem[i].value)) {
+          alert(`'Num ${i+1}' must be a number`);
+          return false;
+        }
+        if (elem[i].value == 0 || elem[i].value == "") {
+          text += `- <br>`;
+        } else {
+          // generate values in each field
+          text += `Num ${i+1}: ${(elem[i].value / 2.54).toFixed(1)} inches <br>`;
+        }
+        
+      }
+      //print each line
+
+      document.getElementById("result-in").innerHTML = text;
+    }
+  </script>
+
+</body>
+</html>

@@ -50,10 +50,13 @@
           alert(`'Num ${i+1}' must be a number`);
           return false;
         }
+        if (elem[i].value == 0 || elem[i].value == "") {
+          text += `- <br>`;
+        } else {
         //generate each field (line)
-        text += `Num ${i+1}: ${(elem[i].value * 2.54).toFixed(0)} cm <br>`;
+        text += `Num ${i+1}: ${(elem[i].value * 2.54).toFixed(1)} cm <br>`;
+        }
       }
-
       //print each line
       document.getElementById("result-cm").innerHTML = text;
     }
