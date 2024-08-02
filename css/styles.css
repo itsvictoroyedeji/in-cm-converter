@@ -34,11 +34,11 @@ nav ul {
   overflow: hidden;
 }
 
-li {
+nav li {
   float: left;
 }
 
-li a {
+nav li a {
   display: block;
   color: white;
   text-align: center;
@@ -46,10 +46,14 @@ li a {
   text-decoration: none;
 }
 
-li a:hover:not(.active) {
+nav li a:hover:not(.active) {
   background-color: #111;
 }
 
-.active {
+nav .active {
   background-color: #04aa6d;
+}
+
+@media screen and (max-width: 480px) {
+  nav li {float: none;}
 }
