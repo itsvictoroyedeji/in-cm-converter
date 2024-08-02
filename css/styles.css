@@ -8,17 +8,22 @@ h1 {
 }
 
 .main {
-  height: 750px;
   padding: 20px;
 }
 
 input[type="text"] {
   width: 150px;
+  font-size: 95%;
 }
 
+input[type="button"] {
+  font-size: 100%;
+}
+
+footer {margin-top: 20px;}
 footer p {
   text-align: center;
-  font-size: 90%;
+  font-size: 80%;
 }
 
 nav ul {
